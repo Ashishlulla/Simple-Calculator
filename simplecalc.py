@@ -9,6 +9,158 @@ window.resizable(0, 0)
 window.maxsize(width=300, height=600)
 window.configure(background="black")
 
+# *********************************************Functionality *********************************
+
+val = ""
+A = 0
+operator = ""
+
+
+def btn0_is_clicked():
+    global val
+    val = val + "0"
+    data.set(val)
+
+
+def btn1_is_clicked():
+    global val
+    val = val + "1"
+    data.set(val)
+
+
+def btn2_is_clicked():
+    global val
+    val = val + "2"
+    data.set(val)
+
+
+def btn3_is_clicked():
+    global val
+    val = val + "3"
+    data.set(val)
+
+
+def btn4_is_clicked():
+    global val
+    val = val + "4"
+    data.set(val)
+
+
+def btn5_is_clicked():
+    global val
+    val = val + "5"
+    data.set(val)
+
+
+def btn6_is_clicked():
+    global val
+    val = val + "6"
+    data.set(val)
+
+
+def btn7_is_clicked():
+    global val
+    val = val + "7"
+    data.set(val)
+
+
+def btn8_is_clicked():
+    global val
+    val = val + "8"
+    data.set(val)
+
+
+def btn9_is_clicked():
+    global val
+    val = val + "9"
+    data.set(val)
+
+
+def plus():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "+"
+    val = val + "+"
+    data.set(val)
+
+
+def sub():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "-"
+    val = val + "-"
+    data.set(val)
+
+
+def mul():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "*"
+    val = val + "*"
+    data.set(val)
+
+
+def div():
+    global A
+    global operator
+    global val
+    A = int(val)
+    operator = "/"
+    val = val + "/"
+    data.set(val)
+
+
+def clear():
+    global val
+    global A
+    global operator
+    A = 0
+    operator = ""
+    val = ""
+    data.set(val)
+
+
+def result():
+    global A
+    global operator
+    global val
+    if operator == "+":
+        x = int((val.split("+")[1]))
+        add = A + x
+        data.set(add)
+        val = str(add)
+    elif operator == "-":
+        x = int((val.split("-")[1]))
+        sub= A - x
+        data.set(sub)
+        val = str(sub)
+    elif operator == "*":
+        x = int((val.split("*")[1]))
+        mul = A * x
+        data.set(mul)
+        val = str(mul)
+    elif operator == "/":
+        x = int((val.split("/")[1]))
+        if x == 0:
+            m_box.showerror("Error", "Zero Division Error")
+            A = 0
+            operator = ""
+            val = ""
+            data.set(val)
+        else:
+            div = A / x
+            data.set(div)
+            val = str(div)
+
+
+# ****************************************** End Functionality *******************************
+
 # ******************************************* Label **************************************
 data = tk.StringVar()
 label1 = tk.Label(window, text="Label", font=('verdana', 14), bg="black", fg="white", textvariable=data)
